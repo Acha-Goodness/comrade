@@ -21,40 +21,41 @@ export default function Login() {
     const dispatch = useDispatch();
 
     const onSubmit = () => {
-        const { username, password } = formData;
+        router.push("/(dash)/dashboard")
+        // const { username, password } = formData;
 
-        if (!username) {
-            Toast.show({
-                type: 'error',
-                text1: 'Email is required',
-            });
-            return;
-        }
+        // if (!username) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'Email is required',
+        //     });
+        //     return;
+        // }
 
-        if (!password) {
-            Toast.show({
-                type: 'error',
-                text1: 'Password is required',
-            });
-            return;
-        }
+        // if (!password) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'Password is required',
+        //     });
+        //     return;
+        // }
 
-        dispatch(login(formData))
-            .then((res) => {
-                if (res?.payload?.requestSuccessful === true) {
-                    console.log(res)
-                    router.push("/setPin")
-                } else if (res?.payload?.requestSuccessful === false) {
-                    throw new Error(res?.payload?.responseMessage || "Login failed");
-                } else {
-                    throw new Error("Login failed");
-                };
-            }).catch((err) => {
-                Toast.show({
-                    type: 'error',
-                    text1: err.message,
-                });
-            })
+        // dispatch(login(formData))
+        //     .then((res) => {
+        //         if (res?.payload?.requestSuccessful === true) {
+        //             console.log(res)
+        //             router.push("/(dash)/dashboard")
+        //         } else if (res?.payload?.requestSuccessful === false) {
+        //             throw new Error(res?.payload?.responseMessage || "Login failed");
+        //         } else {
+        //             throw new Error("Login failed");
+        //         };
+        //     }).catch((err) => {
+        //         Toast.show({
+        //             type: 'error',
+        //             text1: err.message,
+        //         });
+        //     })
     }
 
     return (

@@ -27,49 +27,50 @@ export default function SignUp() {
     const privacyPolicy = "By signing in to this app you agree with our Terms of Use and Privacy Policy."
 
     const onSubmit = () => {
-        const { password, confirmPassword } = formData;
+        router.push("/verify")
+        // const { password, confirmPassword } = formData;
 
-        if (!password) {
-            Toast.show({
-                type: 'error',
-                text1: 'Password is required',
-            });
-            return;
-        }
+        // if (!password) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'Password is required',
+        //     });
+        //     return;
+        // }
 
-        if (!confirmPassword) {
-            Toast.show({
-                type: 'error',
-                text1: 'Please confirm your password',
-            });
-            return;
-        }
+        // if (!confirmPassword) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'Please confirm your password',
+        //     });
+        //     return;
+        // }
 
-        if (password !== confirmPassword) {
-            Toast.show({
-                type: 'error',
-                text1: 'Passwords do not match',
-            });
-            return;
-        }
+        // if (password !== confirmPassword) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'Passwords do not match',
+        //     });
+        //     return;
+        // }
 
-        delete formData.confirmPassword;
+        // delete formData.confirmPassword;
 
-        dispatch(signup(formData))
-            .then((res) => {
-                if (res?.payload?.requestSuccessful === true) {
-                    router.push("/login")
-                } else if (res?.payload?.requestSuccessful === false) {
-                    throw new Error(res?.payload?.responseMessage || "Registration failed");
-                } else {
-                    throw new Error("Registration failed");
-                };
-            }).catch((err) => {
-                Toast.show({
-                    type: 'error',
-                    text1: err.message,
-                });
-            })
+        // dispatch(signup(formData))
+        //     .then((res) => {
+        //         if (res?.payload?.requestSuccessful === true) {
+        //             router.push("/login")
+        //         } else if (res?.payload?.requestSuccessful === false) {
+        //             throw new Error(res?.payload?.responseMessage || "Registration failed");
+        //         } else {
+        //             throw new Error("Registration failed");
+        //         };
+        //     }).catch((err) => {
+        //         Toast.show({
+        //             type: 'error',
+        //             text1: err.message,
+        //         });
+        //     })
     }
 
     return (

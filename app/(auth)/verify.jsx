@@ -58,40 +58,41 @@ const Verify = () => {
     };
 
     const onSubmit = () => {
-        if (!formData.otp) {
-            Toast.show({
-                type: 'error',
-                text1: 'OTP is required',
-            });
-            return;
-        }
+        router.push("/(dash)/dashboard");
+        // if (!formData.otp) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'OTP is required',
+        //     });
+        //     return;
+        // }
 
-        const otp = {
-            notificationType: "EMAIL",
-            emailAddress: email,
-            otp: formData.otp,
-        }
+        // const otp = {
+        //     notificationType: "EMAIL",
+        //     emailAddress: email,
+        //     otp: formData.otp,
+        // }
 
-        dispatch(verifyOtp(otp))
-            .then((res) => {
-                if (res?.payload?.requestSuccessful === true) {
-                    Toast.show({
-                        type: 'success',
-                        text1: res?.payload?.responseBody.message,
-                    });
-                    router.push("/phoneNo");
-                } else if (res?.payload?.requestSuccessful === false) {
-                    throw new Error(res?.payload?.responseMessage || "Verification failed");
-                } else {
-                    throw new Error("Verification failed");
-                };
-            })
-            .catch((err) => {
-                Toast.show({
-                    type: 'error',
-                    text1: err.message,
-                });
-            })
+        // dispatch(verifyOtp(otp))
+        //     .then((res) => {
+        //         if (res?.payload?.requestSuccessful === true) {
+        //             Toast.show({
+        //                 type: 'success',
+        //                 text1: res?.payload?.responseBody.message,
+        //             });
+        //             router.push("/(dash)/dashboard");
+        //         } else if (res?.payload?.requestSuccessful === false) {
+        //             throw new Error(res?.payload?.responseMessage || "Verification failed");
+        //         } else {
+        //             throw new Error("Verification failed");
+        //         };
+        //     })
+        //     .catch((err) => {
+        //         Toast.show({
+        //             type: 'error',
+        //             text1: err.message,
+        //         });
+        //     })
     }
 
     const resendCode = () => {
