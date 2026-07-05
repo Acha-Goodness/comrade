@@ -6,7 +6,7 @@ import Header from '../components/Header';
 export default function Onboarding() {
 
     return (
-        <SafeAreaView className="flex-1 bg-[#240046]">
+        <SafeAreaView className="flex-1 bg-[#000000]">
             <Header />
             <OnboardingSlide />
         </SafeAreaView>

@@ -8,24 +8,63 @@ const { width, height } = Dimensions.get("window");
 const slides = [
     {
         id: "1",
-        title: "Build Wealth Through\nYour Community.",
-        subtitle:
-            "Create your Royalsettle account today and have your money work for you.",
+        title: "An investment in knowledge pays the best interest.",
+        subtitle: "Benjamin Franklin",
         image: require("../assets/images/slide1.png"),
     },
     {
         id: "2",
-        title: "More People. More\nPower. More Savings.",
-        subtitle:
-            "Create your Royalsettle account today and have your money work for you.",
+        title: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        subtitle: "Mahatma Gandhi",
         image: require("../assets/images/slide2.png"),
     },
     {
         id: "3",
-        title: "Your Circle, Your\nStrength.",
-        subtitle:
-            "Create your Royalsettle account today and have your money work for you.",
+        title: "The future belongs to those who believe in the beauty of their dreams.",
+        subtitle: "Eleanor Roosevelt",
         image: require("../assets/images/slide3.png"),
+    },
+    {
+        id: "4",
+        title: "The best way to predict the future is to create it.",
+        subtitle: "Peter Drucker",
+        image: require("../assets/images/slide1.png"),
+    },
+    {
+        id: "5",
+        title: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+        subtitle: "Benjamin Franklin",
+        image: require("../assets/images/slide2.png"),
+    },
+    {
+        id: "6",
+        title: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        subtitle: "Winston Churchill",
+        image: require("../assets/images/slide3.png"),
+    },
+    {
+        id: "7",
+        title: "The mind is not a vessel to be filled, but a fire to be kindled.",
+        subtitle: "Plutarch",
+        image: require("../assets/images/slide1.png"),
+    },
+    {
+        id: "8",
+        title: "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+        subtitle: "Malcolm X",
+        image: require("../assets/images/slide2.png"),
+    },
+    {
+        id: "9",
+        title: "You don't have to be great to start, but you have to start to be great.",
+        subtitle: "Zig Ziglar",
+        image: require("../assets/images/slide3.png"),
+    },
+    {
+        id: "10",
+        title: "The beautiful thing about learning is that no one can take it away from you.",
+        subtitle: "B.B. King",
+        image: require("../assets/images/slide2.png"),
     },
 ];
 
@@ -77,7 +116,7 @@ export default function OnboardingSlider() {
             {/* Static Header with Logo and Dots */}
             <View className="px-6 mb-4">
                 <Text className="text-white text-2xl font-bold">
-                    Royalsettle™
+                    Comrade™
                 </Text>
 
                 {/* Dots Indicator - Moved below Logo */}
@@ -136,7 +175,6 @@ export default function OnboardingSlider() {
                     </Link>
                 </Text>
 
-
                 <Pressable className="bg-white py-4 rounded-full shadow-lg active:opacity-90">
                     <Link href="/signup">
                         <Text className="text-center text-[#1a0b2e] font-bold text-lg">
@@ -144,7 +182,6 @@ export default function OnboardingSlider() {
                         </Text>
                     </Link>
                 </Pressable>
-
             </View>
         </View>
     );
