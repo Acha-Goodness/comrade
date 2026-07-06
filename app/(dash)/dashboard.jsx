@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Octicons, MaterialIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -23,6 +23,16 @@ const Dashboard = () => {
                         <Octicons name="bell-fill" size={25} color="#0452df" />
                     </View>
                 </View>
+                <View className="mt-[3%]">
+                    <TextInput
+                        placeholder="Search"
+                        className="w-[100%] py-4 px-3 rounded-[10px] border border-2 border-[#F0F0F0]"
+                        id="search"
+                        type="text"
+                        autoCapitalize="none"
+                        placeholderTextColor="#777"
+                    />
+                </View>
                 <View className="flex-row mt-[3%] bg-[#0452df] p-5 rounded-[10px]">
                     <View className="w-[50%] justify-center">
                         <Text className="text-[15px] font-[500] font-inter font-semibold text-[#FFF]">Build Together</Text>
@@ -41,12 +51,8 @@ const Dashboard = () => {
                     </View>
                 </View>
                 <View className="mt-[5%]">
-                    <View className="flex-row justify-between items-center">
-                        <View className="flex-row gap-2">
-                            <FontAwesome name="group" size={20} color="black" />
-                            <Text className="text-[16px] leading-tight font-[600]">Quick Action</Text>
-                        </View>
-                        <Text className="text-[12px] font-[500] font-inter text-[#0452df] font-semibold">View All</Text>
+                    <View className="">
+                        <Text className="text-[16px] leading-tight font-[600]">Quick Action</Text>
                     </View>
                     <View className="mt-4">
                         <FlatList
@@ -75,11 +81,9 @@ const Dashboard = () => {
                     </View>
                 </View>
 
-                <View className="mt-[5%] mb-[2%]">
+                <View className="mt-[5%] mb-[3%]">
                     <View className="flex-row justify-between items-center">
-                        <View>
-                            <Text className="text-[18px] font-[600] text-[#000]">Today's Classes</Text>
-                        </View>
+                        <Text className="text-[18px] font-[600] text-[#000]">Today's Classes</Text>
                         <Text className="text-[12px] font-[500] font-inter text-[#0452df] font-semibold">View Timetable</Text>
                     </View>
                 </View>
@@ -90,7 +94,7 @@ const Dashboard = () => {
                         { id: 2, text: 'Python Programming', time: '08:00 AM - 10:00 AM', venue: 'Room 302, Design Block', lecturer: 'Dr. Smith', icon: 'code', iconColor: "#ad4e00ff", bgColor: "#ffdabeff" },
                     ]}
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{ gap: 16, paddingBottom: 40 }}
+                    contentContainerStyle={{ gap: 16, paddingBottom: 15 }}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => (
                         <View className="flex-row items-center gap-2">
@@ -101,9 +105,9 @@ const Dashboard = () => {
                                 <MaterialIcons name={item.icon} size={24} color={item.iconColor} />
                             </View>
                             <View>
-                                <Text className="text-[13px] text-[#000] font-poppins-bold mt-2">{item.text}</Text>
+                                <Text className="text-[13px] text-[#000] font-poppins-bold">{item.text}</Text>
                                 <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.time}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.venue} | {item.lecturer}</Text>
+                                <Text className="text-[10px] text-[#000] font-poppins-medium">{item.venue} | {item.lecturer}</Text>
                             </View>
                         </View>
                     )}
@@ -120,25 +124,26 @@ const Dashboard = () => {
 
                 <FlatList
                     data={[
-                        { id: 1, text: 'Data Structures & Algorithms', time: '08:00 AM - 10:00 AM', venue: 'Room 204, CS Building', lecturer: 'Dr. Smith', img: dataImg, iconColor: "#a200c7ff", bgColor: "#d0ffe0ff" },
+                        { id: 1, text: 'Data Structures & Algorithms', date: "6th, July", time: '08:00 AM - 10:00 AM', venue: 'Auditorium, Faculty of Engineering', img: dataImg, iconColor: "#a200c7ff" },
                     ]}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ gap: 16, paddingBottom: 40 }}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => (
-                        <View className="flex-row items-center gap-2">
+                        <View className="flex-row items-center gap-2 mt-4">
                             <View
-                                className="p-5 rounded-[5px] w-[5px] h-[5px] items-center"
+                                className="w-[80px] h-[50px]"
                             >
                                 <Image
                                     source={item.img}
+                                    className='w-[100%] h-[100%] rounded-[10px]'
                                     resizeMode="contain"
                                 />
                             </View>
                             <View>
-                                <Text className="text-[13px] text-[#000] font-poppins-bold mt-2">{item.text}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.time}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.venue} | {item.lecturer}</Text>
+                                <Text className="text-[13px] text-[#000] font-poppins-bold">{item.text}</Text>
+                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.date} | {item.time}</Text>
+                                <Text className="text-[10px] text-[#000] font-poppins-medium">{item.venue}</Text>
                             </View>
                         </View>
                     )}

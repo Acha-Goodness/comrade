@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons, Octicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Octicons, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, View, Text } from 'react-native';
@@ -73,7 +73,7 @@ const DashLayout = () => {
                                 className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
                                 ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <FontAwesome5
+                                <FontAwesome
                                     name="building"
                                     size={focused ? 18 : 24}
                                     color={focused ? "#FFFFFF" : "#0452df"}
