@@ -1,4 +1,4 @@
-import { Ionicons, MaterialCommunityIcons, Octicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Octicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, View, Text } from 'react-native';

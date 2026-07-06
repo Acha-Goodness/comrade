@@ -1,5 +1,4 @@
 import { View, Image } from 'react-native'
-import { SimpleLineIcons, MaterialIcons } from '@expo/vector-icons';
 
 const Header = ({ title }) => {
     return (

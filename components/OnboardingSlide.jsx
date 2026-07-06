@@ -132,7 +132,7 @@ export default function OnboardingSlider() {
                         <View
                             key={index}
                             className={`h-1.5 rounded-full ml-[2px] ${(activeIndex % slides.length) === index
-                                ? "w-2 bg-[#fea01c]"
+                                ? "w-2 bg-[#0452df]"
                                 : "w-1.5 bg-white"
                                 }`}
                         />
