@@ -17,7 +17,7 @@ const Dashboard = () => {
                         <Text className="text-[20px] font-[500] font-poppins text-[#000]">Hi, Henry</Text>
                     </View>
                     <View className="p-[3%] rounded-[50px]">
-                        <View className="bg-red-500 rounded-full w-5 h-5 flex items-center justify-center absolute top-1 right-2.5 z-10">
+                        <View className="bg-[#0452df] rounded-full w-5 h-5 flex items-center justify-center absolute top-1 right-2.5 z-10">
                             <Text className="text-[10px] text-white font-[500] font-inter">0</Text>
                         </View>
                         <Octicons name="bell-fill" size={25} color="#000000" />
@@ -106,8 +106,8 @@ const Dashboard = () => {
                             </View>
                             <View>
                                 <Text className="text-[13px] text-[#000] font-poppins-bold">{item.text}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.time}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium">{item.venue} | {item.lecturer}</Text>
+                                <Text className="text-[10px] text-[#868686ff] font-poppins-medium mt-2">{item.time}</Text>
+                                <Text className="text-[10px] text-[#868686ff] font-poppins-medium">{item.venue} | {item.lecturer}</Text>
                             </View>
                         </View>
                     )}
@@ -142,8 +142,8 @@ const Dashboard = () => {
                             </View>
                             <View>
                                 <Text className="text-[13px] text-[#000] font-poppins-bold">{item.text}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.date} | {item.time}</Text>
-                                <Text className="text-[10px] text-[#000] font-poppins-medium">{item.venue}</Text>
+                                <Text className="text-[10px] text-[#868686ff] font-poppins-medium mt-2">{item.date} | {item.time}</Text>
+                                <Text className="text-[10px] text-[#868686ff] font-poppins-medium">{item.venue}</Text>
                             </View>
                         </View>
                     )}

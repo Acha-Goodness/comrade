@@ -10,8 +10,8 @@ const Campus = () => {
         { id: 2, text: 'Assignment', icon: 'assignment', iconColor: "#003dadff", bgColor: "#d2e7ffff" },
         { id: 3, text: 'Events', icon: 'event-seat', iconColor: "#700098ff", bgColor: "#ffe4f1ff" },
         { id: 4, text: 'Results', icon: 'scoreboard', iconColor: "#df0000ff", bgColor: "#ffe1e1ff" },
-        { id: 5, text: 'Attendance', icon: 'app-registration', iconColor: "#df0000ff", bgColor: "#ffe1e1ff" },
-        { id: 6, text: 'Coursemate', icon: 'groups', iconColor: "#df0000ff", bgColor: "#ffe1e1ff" }
+        { id: 5, text: 'Attendance', icon: 'app-registration', iconColor: "#ff00aeff", bgColor: "#ffd5f2ff" },
+        { id: 6, text: 'Coursemate', icon: 'groups', iconColor: "#e0af00ff", bgColor: "#fff5d3ff" }
     ]
 
     const campus = [
@@ -21,9 +21,9 @@ const Campus = () => {
     ]
 
     const services = [
-        { id: 1, text: 'Library', sub: "Search book & resources", icon: 'assignment', iconColor: "#000000", bgColor: "#ffffff" },
-        { id: 3, text: 'Hostel', sub: "Info & Complaints", icon: 'add-location-alt', iconColor: "#000000", bgColor: "#ffffff" },
-        { id: 4, text: 'Transport', sub: "Routes & Schedules", icon: 'phone-in-talk', iconColor: "#000000", bgColor: "#ffffff" },
+        { id: 1, text: 'Library', sub: "Search book & resources", icon: 'local-library', iconColor: "#000000", bgColor: "#ffffff" },
+        { id: 3, text: 'Hostel', sub: "Info & Complaints", icon: 'business', iconColor: "#000000", bgColor: "#ffffff" },
+        { id: 4, text: 'Transport', sub: "Routes & Schedules", icon: 'directions-bus', iconColor: "#000000", bgColor: "#ffffff" },
     ]
     return (
         <SafeAreaView className="flex-1 bg-white p-[20%]">
@@ -34,7 +34,7 @@ const Campus = () => {
                         <Text className="text-[20px] font-poppins text-[#000]">Campus</Text>
                     </View>
                     <View className="p-[3%] rounded-[50px]">
-                        <View className="bg-red-500 rounded-full w-5 h-5 flex items-center justify-center absolute top-1 right-2.5 z-10">
+                        <View className="bg-[#0452df] rounded-full w-5 h-5 flex items-center justify-center absolute top-1 right-2.5 z-10">
                             <Text className="text-[10px] text-white font-[500] font-inter">0</Text>
                         </View>
                         <Octicons name="bell-fill" size={25} color="#000000" />
@@ -81,7 +81,7 @@ const Campus = () => {
                     </View>
                 </View>
 
-                <View className="mt-[2%]">
+                <View className="mt-[1%]">
                     <View className="">
                         <Text className="text-[16px] leading-tight font-[600]">Campus Life</Text>
                     </View>
@@ -109,7 +109,7 @@ const Campus = () => {
                     </View>
                 </View>
 
-                <View className="mt-[2%]">
+                <View className="mt-[1%]">
                     <View className="">
                         <Text className="text-[16px] leading-tight font-[600]">Services</Text>
                     </View>
@@ -123,10 +123,10 @@ const Campus = () => {
                             renderItem={({ item }) => (
                                 <View className={`w-[100px] justify-between flex-row w-full mt-2 py-4 px-2 rounded-[5px] border border-1 border-[#c3c3c3ff] items-center`}>
                                     <View className='flex-row items-center w-[70%]'>
-                                        <MaterialIcons name="add-location" size={30} color="#000000" />
+                                        <MaterialIcons name={item.icon} size={30} color="#000000" />
                                         <View className="ml-2">
-                                            <Text className="text-[10px] text-[#000000] font-poppins-medium">{item.text}</Text>
-                                            <Text className="text-[10px] text-[#000000] font-poppins-medium">{item.sub}</Text>
+                                            <Text className="text-[14px] text-[#000000] font-poppins-medium">{item.text}</Text>
+                                            <Text className="text-[10px] text-[#868686ff] font-poppins-medium">{item.sub}</Text>
                                         </View>
                                     </View>
                                     <MaterialIcons name="chevron-right" size={20} color="#000000" />
