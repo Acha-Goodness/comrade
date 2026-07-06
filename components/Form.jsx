@@ -27,12 +27,7 @@ const FloatingLabel = ({ label, isActive }) => {
 // OTP FUNCTION
 const OtpInput = ({ formData, setFormData, buttonText }) => {
 
-    let numInputs;
-    if (buttonText === "Set Pin") {
-        numInputs = 4; // or however many OTP digits you expect
-    } else {
-        numInputs = 6; // or however many OTP digits you expect
-    }
+    let numInputs = 4
 
     const [otp, setOtp] = useState([]);
 
@@ -67,7 +62,7 @@ const OtpInput = ({ formData, setFormData, buttonText }) => {
     };
 
     return (
-        <View className="flex-1 flex-row items-center justify-center">
+        <View className="flex-1 flex-row gap-4">
             {otp?.map((digit, index) => (
                 <TextInput
                     name={otp[digit]}

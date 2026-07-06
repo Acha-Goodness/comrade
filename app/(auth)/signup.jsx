@@ -78,17 +78,17 @@ export default function SignUp() {
             <Header />
             <View className="flex-1 px-[4%] pb-6">
                 <View className="flex-1">
-                    <Text className="text-white text-[40px] font-medium leading-tight mt-4">Sign up</Text>
+                    <Text className="text-white text-[40px] font-medium leading-tight mt-1">Sign up</Text>
                     <Text className="text-white text-[14px] font-inter mt-4">Provide details on all all required filed. We will set your account up in a giffy.</Text>
-                    <Text className="text-white text-[14px] font-inter mt-4 absolute bottom-[11%]">Already have an account?{" "}
+                    <Text className="text-white text-[14px] font-inter absolute bottom-[7%]">Already have an account?{" "}
                         <Link href="/login">
-                            <Text className="text-[#fea01c] font-[600]">
+                            <Text className="text-[#ff8000] font-[600]">
                                 Log in
                             </Text>
                         </Link>
                     </Text>
 
-                    <View className="mt-8 h-full">
+                    <View className="mt-3 h-full">
                         <CommonForm
                             formControls={signupFormControls}
                             buttonText={"Sign Up"}

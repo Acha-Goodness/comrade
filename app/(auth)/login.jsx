@@ -74,7 +74,7 @@ export default function Login() {
                         </Link>
                     </Text>
 
-                    <View className="mt-8 h-full">
+                    <View className="mt-5 h-full">
                         <CommonForm
                             formControls={loginFormControls}
                             buttonText={"Login"}
