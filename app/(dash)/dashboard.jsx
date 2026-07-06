@@ -2,7 +2,7 @@ import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Octicons, MaterialIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import group from "../../assets/images/group.png"
+import group from "@/assets/images/group.png"
 
 const Dashboard = () => {
     const router = useRouter();
