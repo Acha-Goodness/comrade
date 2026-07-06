@@ -34,7 +34,7 @@ const slides = [
         id: "5",
         title: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
         subtitle: "Benjamin Franklin",
-        image: require("../assets/images/slide2.png"),
+        image: require("../assets/images/slide5.png"),
     },
     {
         id: "6",

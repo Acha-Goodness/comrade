@@ -6,7 +6,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 
 const { width } = Dimensions.get('window');
 
-const Thrift = () => {
+const Market = () => {
 
     const params = useLocalSearchParams();
     // Default to the empty state (false), unless we intentionally route here after
@@ -193,4 +193,4 @@ const Thrift = () => {
     )
 }
 
-export default Thrift;
+export default Market;

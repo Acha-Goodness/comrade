@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, FontAwesome, Entypo, MaterialIcons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-const Wallet = () => {
+const Message = () => {
     const router = useRouter();
 
     const transaction = [
@@ -184,4 +184,4 @@ const Wallet = () => {
     )
 }
 
-export default Wallet;
+export default Message;

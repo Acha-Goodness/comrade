@@ -13,14 +13,14 @@ const Dashboard = () => {
             <View>
                 <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center justify-between gap-2">
-                        <MaterialCommunityIcons name="account-school" size={40} color="#0452df" />
-                        <Text className="text-[20px] font-[500] font-inter text-[#000]">Hi, Henry</Text>
+                        <MaterialCommunityIcons name="account-school" size={40} color="#000000" />
+                        <Text className="text-[20px] font-[500] font-poppins text-[#000]">Hi, Henry</Text>
                     </View>
                     <View className="p-[3%] rounded-[50px]">
                         <View className="bg-red-500 rounded-full w-5 h-5 flex items-center justify-center absolute top-1 right-2.5 z-10">
                             <Text className="text-[10px] text-white font-[500] font-inter">0</Text>
                         </View>
-                        <Octicons name="bell-fill" size={25} color="#0452df" />
+                        <Octicons name="bell-fill" size={25} color="#000000" />
                     </View>
                 </View>
                 <View className="mt-[3%]">
@@ -33,13 +33,13 @@ const Dashboard = () => {
                         placeholderTextColor="#777"
                     />
                 </View>
-                <View className="flex-row mt-[3%] bg-[#0452df] p-5 rounded-[10px]">
+                <View className="flex-row mt-[3%] bg-[#000000] p-5 rounded-[10px]">
                     <View className="w-[50%] justify-center">
                         <Text className="text-[15px] font-[500] font-inter font-semibold text-[#FFF]">Build Together</Text>
                         <Text className="text-[15px] font-[500] font-inter font-semibold text-[#FFF]">Succeed Together</Text>
                         <Text className="text-[11px] font-[500] font-inter text-[#FFF] w-[70%] mt-3">Join study groups and achieve your goals</Text>
                         <TouchableOpacity className="bg-white py-[10px] rounded-[5px] mt-4 w-[60%]">
-                            <Text className="text-[12px] font-[500] text-center font-inter text-[#0452df]">Explore Groups</Text>
+                            <Text className="text-[12px] font-[500] text-center font-inter text-[#000000]">Explore Groups</Text>
                         </TouchableOpacity>
                     </View>
                     <View className="w-[100%] flex-1 justify-center">
@@ -58,13 +58,13 @@ const Dashboard = () => {
                         <FlatList
                             data={[
                                 { id: 1, text: 'sell an item', icon: 'shopping-basket', iconColor: "#00b106ff", bgColor: "#d0ffe0ff" },
-                                { id: 2, text: 'Study Groups', icon: 'groups', iconColor: "#003dadff", bgColor: "#d2e7ffff" },
+                                { id: 2, text: 'Study Groups', icon: 'diversity-3', iconColor: "#003dadff", bgColor: "#d2e7ffff" },
                                 { id: 3, text: 'Lost & Found', icon: 'manage-search', iconColor: "#700098ff", bgColor: "#ffe4f1ff" },
                                 { id: 4, text: 'Report Issue', icon: 'report', iconColor: "#df0000ff", bgColor: "#ffe1e1ff" },
                             ]}
                             horizontal
                             showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={{ gap: 30, paddingRight: 20, margin: "auto", width: "90%" }}
+                            contentContainerStyle={{ gap: 30, margin: "auto", width: "90%" }}
                             keyExtractor={item => item.id.toString()}
                             renderItem={({ item }) => (
                                 <View>

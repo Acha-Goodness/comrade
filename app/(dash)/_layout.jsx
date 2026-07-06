@@ -47,12 +47,12 @@ const DashLayout = () => {
                         tabBarIcon: ({ focused }) => (
                             <View
                                 className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
-                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
+                                ${focused ? "bg-[#000000]" : "bg-transparent"}`}
                             >
                                 <Octicons
                                     name="home-fill"
                                     size={focused ? 18 : 24}
-                                    color={focused ? "#FFFFFF" : "#0452df"}
+                                    color={focused ? "#FFFFFF" : "#000000"}
                                 />
 
                                 {focused && (
@@ -66,17 +66,17 @@ const DashLayout = () => {
                 />
 
                 <Tabs.Screen
-                    name="ajo"
+                    name="campus"
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
                                 className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
-                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
+                                ${focused ? "bg-[#000000]" : "bg-transparent"}`}
                             >
                                 <FontAwesome
                                     name="building"
                                     size={focused ? 18 : 24}
-                                    color={focused ? "#FFFFFF" : "#0452df"}
+                                    color={focused ? "#FFFFFF" : "#000000"}
                                 />
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
@@ -89,17 +89,17 @@ const DashLayout = () => {
                 />
 
                 <Tabs.Screen
-                    name="thrift"
+                    name="market"
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
                                 className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
-                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
+                                ${focused ? "bg-[#000000]" : "bg-transparent"}`}
                             >
                                 <MaterialIcons
                                     name="shopping-cart"
                                     size={focused ? 18 : 24}
-                                    color={focused ? "#FFFFFF" : "#0452df"}
+                                    color={focused ? "#FFFFFF" : "#000000"}
                                 />
 
                                 {focused && (
@@ -113,17 +113,17 @@ const DashLayout = () => {
                 />
 
                 <Tabs.Screen
-                    name="wallet"
+                    name="message"
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
                                 className={`flex-row items-center w-[88px] justify-center h-10 px-4 rounded-[10px]
-                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
+                                ${focused ? "bg-[#000000]" : "bg-transparent"}`}
                             >
                                 <MaterialCommunityIcons
                                     name="message-text-fast"
                                     size={focused ? 18 : 24}
-                                    color={focused ? "#FFFFFF" : "#0452df"}
+                                    color={focused ? "#FFFFFF" : "#000000"}
                                 />
 
                                 {focused && (
@@ -142,12 +142,12 @@ const DashLayout = () => {
                         tabBarIcon: ({ focused }) => (
                             <View
                                 className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
-                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
+                                ${focused ? "bg-[#000000]" : "bg-transparent"}`}
                             >
                                 <MaterialCommunityIcons
                                     name="account-school"
                                     size={focused ? 18 : 24}
-                                    color={focused ? "#FFFFFF" : "#0452df"}
+                                    color={focused ? "#FFFFFF" : "#000000"}
                                 />
 
                                 {focused && (
