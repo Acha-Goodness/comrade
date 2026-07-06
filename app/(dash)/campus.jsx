@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons, MaterialCommunityIcons, Octicons, MaterialIcons } from '@expo/vector-icons';
+import { Octicons, MaterialIcons } from '@expo/vector-icons';
 import bob from "@/assets/images/bob.png"
 
 const Campus = () => {
@@ -15,9 +15,9 @@ const Campus = () => {
     ]
 
     const campus = [
-        { id: 1, text: 'Clubs', icon: 'assignment', iconColor: "#ffffff", bgColor: "#000000" },
+        { id: 1, text: 'Clubs', icon: 'assignment', iconColor: "#ffffff", bgColor: "#000000ff" },
         { id: 3, text: 'Campus Map', icon: 'add-location-alt', iconColor: "#ffffff", bgColor: "#000000ff" },
-        { id: 4, text: 'Emergency', icon: 'phone-in-talk', iconColor: "#ffffff", bgColor: "#000000" },
+        { id: 4, text: 'Emergency', icon: 'phone-in-talk', iconColor: "#ffffff", bgColor: "#000000ff" },
     ]
 
     const services = [
@@ -40,7 +40,7 @@ const Campus = () => {
                         <Octicons name="bell-fill" size={25} color="#000000" />
                     </View>
                 </View>
-                <View className="flex-row bg-[#000000] px-5 rounded-[10px]">
+                <View className="flex-row bg-[#000000ff] px-5 rounded-[10px]">
                     <View className="w-[50%] justify-center">
                         <Text className="text-[15px] font-[500] font-inter font-semibold text-[#FFF]">Study on top of your campus life</Text>
                     </View>
