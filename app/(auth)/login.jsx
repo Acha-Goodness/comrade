@@ -59,7 +59,7 @@ export default function Login() {
     }
 
     return (
-        <SafeAreaView className="flex-1 bg-[#240046]">
+        <SafeAreaView className="flex-1 bg-[#000000]">
             <Header />
             <View className="flex-1 px-[4%] pb-6">
                 <View className="flex-1">

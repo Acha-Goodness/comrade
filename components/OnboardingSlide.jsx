@@ -28,7 +28,7 @@ const slides = [
         id: "4",
         title: "The best way to predict the future is to create it.",
         subtitle: "Peter Drucker",
-        image: require("../assets/images/slide1.png"),
+        image: require("../assets/images/slide4.png"),
     },
     {
         id: "5",
@@ -46,7 +46,7 @@ const slides = [
         id: "7",
         title: "The mind is not a vessel to be filled, but a fire to be kindled.",
         subtitle: "Plutarch",
-        image: require("../assets/images/slide1.png"),
+        image: require("../assets/images/slide4.png"),
     },
     {
         id: "8",
@@ -156,9 +156,8 @@ export default function OnboardingSlider() {
                         </View>
                         <ImageBackground
                             source={item.image}
-                            resizeMode="cover"
-                            className="px-6 h-full w-full"
-                            style={{ width }}
+                            resizeMode="contain"
+                            className="px-6 h-[50%] w-full"
                         />
                     </View>
                 )}
@@ -178,7 +177,7 @@ export default function OnboardingSlider() {
                 <Pressable className="bg-white py-4 rounded-full shadow-lg active:opacity-90">
                     <Link href="/signup">
                         <Text className="text-center text-[#1a0b2e] font-bold text-lg">
-                            Create an account
+                            Sign Up
                         </Text>
                     </Link>
                 </Pressable>
