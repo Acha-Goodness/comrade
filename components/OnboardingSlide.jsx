@@ -74,41 +74,48 @@ const infiniteSlides = [...slides, { ...slides[0], id: "1-duplicate" }];
 export default function OnboardingSlider() {
     const [activeIndex, setActiveIndex] = useState(0);
     const flatListRef = useRef(null);
+    // Keep a ref so the single stable interval always sees the latest index
+    const activeIndexRef = useRef(0);
+    // Guard: only call scroll methods after the FlatList has laid out
+    const isReadyRef = useRef(false);
 
+    // Scroll helper — uses offset instead of index so it never throws
+    const scrollTo = (index, animated = true) => {
+        flatListRef.current?.scrollToOffset({ offset: index * width, animated });
+    };
+
+    // Single stable auto-scroll interval — no stale-closure problem
     useEffect(() => {
         const interval = setInterval(() => {
-            if (activeIndex < infiniteSlides.length - 1) {
-                flatListRef.current?.scrollToIndex({
-                    index: activeIndex + 1,
-                    animated: true,
-                });
+            if (!isReadyRef.current || !flatListRef.current) return;
+
+            const next = activeIndexRef.current + 1;
+
+            if (next < infiniteSlides.length) {
+                scrollTo(next, true);
             }
-        }, 3000); // Scroll every 3 seconds
+        }, 3000);
 
         return () => clearInterval(interval);
-    }, [activeIndex]);
+    }, []); // ← empty dep array: created once, never recreated
 
-    // Handle Infinite Loop Reset
+    // Handle infinite-loop reset when we land on the duplicate last slide
     useEffect(() => {
         if (activeIndex === infiniteSlides.length - 1) {
-            // We are at the duplicate slide. Wait for animation to finish then snap to 0
             const timeout = setTimeout(() => {
-                flatListRef.current?.scrollToIndex({
-                    index: 0,
-                    animated: false,
-                });
+                scrollTo(0, false);
                 setActiveIndex(0);
-            }, 500); // 500ms matches default scroll animation roughly
+                activeIndexRef.current = 0;
+            }, 500);
 
             return () => clearTimeout(timeout);
         }
     }, [activeIndex]);
 
     const onScroll = (event) => {
-        const index = Math.round(
-            event.nativeEvent.contentOffset.x / width
-        );
+        const index = Math.round(event.nativeEvent.contentOffset.x / width);
         setActiveIndex(index);
+        activeIndexRef.current = index;
     };
 
     return (
@@ -143,11 +150,17 @@ export default function OnboardingSlider() {
                 onScroll={onScroll}
                 scrollEventThrottle={16}
                 keyExtractor={(item) => item.id}
+                getItemLayout={(_, index) => ({
+                    length: width,
+                    offset: width * index,
+                    index,
+                })}
+                onLayout={() => { isReadyRef.current = true; }}
                 renderItem={({ item }) => (
                     <View style={{ width }} className="flex-1">
                         {/* Text Content */}
                         <View className="mt-4 px-6">
-                            <Text className="text-white text-[40px] font-medium leading-tight tracking-tight">
+                            <Text className="text-white text-[36px] font-medium leading-tight tracking-tight">
                                 {item.title}
                             </Text>
                             <Text className="text-white font-inter text-base mt-4 leading-6">
