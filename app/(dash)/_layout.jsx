@@ -117,18 +117,18 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                className={`flex-row items-center w-[88px] justify-center h-10 px-4 rounded-[10px]
                                 ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <Ionicons
-                                    name="wallet"
+                                <MaterialCommunityIcons
+                                    name="message-text-fast"
                                     size={focused ? 18 : 24}
                                     color={focused ? "#FFFFFF" : "#0452df"}
                                 />
 
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
-                                        Messages
+                                        Message
                                     </Text>
                                 )}
                             </View>
