@@ -1,4 +1,4 @@
-import { Ionicons, Feather, Fontisto, Foundation, Octicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons, Octicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, View, Text } from 'react-native';
@@ -46,13 +46,13 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-full
-                                ${focused ? "bg-[#2B0A52]" : "bg-transparent"}`}
+                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <Feather
-                                    name="home"
-                                    size={25}
-                                    color={focused ? "#FFFFFF" : "#7E6A9C"}
+                                <Octicons
+                                    name="home-fill"
+                                    size={focused ? 18 : 24}
+                                    color={focused ? "#FFFFFF" : "#0452df"}
                                 />
 
                                 {focused && (
@@ -70,18 +70,17 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-full
-                                ${focused ? "bg-[#2B0A52]" : "bg-transparent"}`}
+                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <Fontisto
-                                    name="persons"
-                                    size={25}
-                                    color={focused ? "#FFFFFF" : "#7E6A9C"}
+                                <FontAwesome5
+                                    name="building"
+                                    size={focused ? 18 : 24}
+                                    color={focused ? "#FFFFFF" : "#0452df"}
                                 />
-
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
-                                        Ajo
+                                        Campus
                                     </Text>
                                 )}
                             </View>
@@ -94,18 +93,18 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-full
-                                ${focused ? "bg-[#2B0A52]" : "bg-transparent"}`}
+                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <Foundation
-                                    name="graph-pie"
-                                    size={25}
-                                    color={focused ? "#FFFFFF" : "#7E6A9C"}
+                                <MaterialIcons
+                                    name="shopping-cart"
+                                    size={focused ? 18 : 24}
+                                    color={focused ? "#FFFFFF" : "#0452df"}
                                 />
 
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
-                                        Thrift
+                                        Market
                                     </Text>
                                 )}
                             </View>
@@ -118,18 +117,18 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-full
-                                ${focused ? "bg-[#2B0A52]" : "bg-transparent"}`}
+                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
                                 <Ionicons
                                     name="wallet"
-                                    size={25}
-                                    color={focused ? "#FFFFFF" : "#7E6A9C"}
+                                    size={focused ? 18 : 24}
+                                    color={focused ? "#FFFFFF" : "#0452df"}
                                 />
 
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
-                                        Wallet
+                                        Messages
                                     </Text>
                                 )}
                             </View>
@@ -142,18 +141,18 @@ const DashLayout = () => {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View
-                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-full
-                                ${focused ? "bg-[#2B0A52]" : "bg-transparent"}`}
+                                className={`flex-row items-center w-[80px] justify-center h-10 px-4 rounded-[10px]
+                                ${focused ? "bg-[#0452df]" : "bg-transparent"}`}
                             >
-                                <Octicons
-                                    name="gear"
-                                    size={25}
-                                    color={focused ? "#FFFFFF" : "#7E6A9C"}
+                                <MaterialCommunityIcons
+                                    name="account-school"
+                                    size={focused ? 18 : 24}
+                                    color={focused ? "#FFFFFF" : "#0452df"}
                                 />
 
                                 {focused && (
                                     <Text className="text-white font-semibold text-sm ml-2">
-                                        Settings
+                                        Profile
                                     </Text>
                                 )}
                             </View>
