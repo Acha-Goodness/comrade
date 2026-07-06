@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Octicons, MaterialIcons, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import group from "@/assets/images/group.png"
+import dataImg from "@/assets/images/data.jpeg"
 
 const Dashboard = () => {
     const router = useRouter();
@@ -61,7 +62,10 @@ const Dashboard = () => {
                             keyExtractor={item => item.id.toString()}
                             renderItem={({ item }) => (
                                 <View>
-                                    <View className="bg-[#F4F4FB] p-5 rounded-[5px] items-center">
+                                    <View
+                                        className={`p-5 rounded-[5px] items-center`}
+                                        style={{ backgroundColor: item.bgColor }}
+                                    >
                                         <MaterialIcons name={item.icon} size={24} color={item.iconColor} />
                                     </View>
                                     <Text className="text-[10px] text-[#000] font-poppins-medium mt-2">{item.text}</Text>
@@ -82,15 +86,18 @@ const Dashboard = () => {
 
                 <FlatList
                     data={[
-                        { id: 1, text: 'Data Structures & Algorithms', time: '08:00 AM - 10:00 AM', venue: 'Room 204, CS Building', lecturer: 'Dr. Smith', icon: 'stacked-bar-chart', iconColor: "#a200c7ff", bgColor: "#d0ffe0ff" },
-                        { id: 2, text: 'Python Programming', time: '08:00 AM - 10:00 AM', venue: 'Room 302, Design Block', lecturer: 'Dr. Smith', icon: 'code', iconColor: "#ad4e00ff", bgColor: "#d2e7ffff" },
+                        { id: 1, text: 'Data Structures & Algorithms', time: '08:00 AM - 10:00 AM', venue: 'Room 204, CS Building', lecturer: 'Dr. Smith', icon: 'stacked-bar-chart', iconColor: "#a200c7ff", bgColor: "#e8d0f8ff" },
+                        { id: 2, text: 'Python Programming', time: '08:00 AM - 10:00 AM', venue: 'Room 302, Design Block', lecturer: 'Dr. Smith', icon: 'code', iconColor: "#ad4e00ff", bgColor: "#ffdabeff" },
                     ]}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ gap: 16, paddingBottom: 40 }}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => (
                         <View className="flex-row items-center gap-2">
-                            <View className="bg-[#F4F4FB] p-5 rounded-[5px] items-center">
+                            <View
+                                className="p-5 rounded-[5px] items-center"
+                                style={{ backgroundColor: item.bgColor }}
+                            >
                                 <MaterialIcons name={item.icon} size={24} color={item.iconColor} />
                             </View>
                             <View>
@@ -113,15 +120,20 @@ const Dashboard = () => {
 
                 <FlatList
                     data={[
-                        { id: 1, text: 'Data Structures & Algorithms', time: '08:00 AM - 10:00 AM', venue: 'Room 204, CS Building', lecturer: 'Dr. Smith', icon: 'stacked-bar-chart', iconColor: "#a200c7ff", bgColor: "#d0ffe0ff" },
+                        { id: 1, text: 'Data Structures & Algorithms', time: '08:00 AM - 10:00 AM', venue: 'Room 204, CS Building', lecturer: 'Dr. Smith', img: dataImg, iconColor: "#a200c7ff", bgColor: "#d0ffe0ff" },
                     ]}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={{ gap: 16, paddingBottom: 40 }}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => (
                         <View className="flex-row items-center gap-2">
-                            <View className="bg-[#F4F4FB] p-5 rounded-[5px] items-center">
-                                <MaterialIcons name={item.icon} size={24} color={item.iconColor} />
+                            <View
+                                className="p-5 rounded-[5px] w-[5px] h-[5px] items-center"
+                            >
+                                <Image
+                                    source={item.img}
+                                    resizeMode="contain"
+                                />
                             </View>
                             <View>
                                 <Text className="text-[13px] text-[#000] font-poppins-bold mt-2">{item.text}</Text>
@@ -132,7 +144,7 @@ const Dashboard = () => {
                     )}
                 />
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
