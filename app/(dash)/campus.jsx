@@ -15,7 +15,7 @@ const Campus = () => {
     ]
 
     const campus = [
-        { id: 1, text: 'Clubs', icon: 'assignment', iconColor: "#ffffff", bgColor: "#000000ff" },
+        { id: 1, text: 'Clubs', icon: 'assignment', iconColor: "#ffffffff", bgColor: "#000000ff" },
         { id: 3, text: 'Campus Map', icon: 'add-location-alt', iconColor: "#ffffff", bgColor: "#000000ff" },
         { id: 4, text: 'Emergency', icon: 'phone-in-talk', iconColor: "#ffffff", bgColor: "#000000ff" },
     ]
