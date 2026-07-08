@@ -15,7 +15,6 @@ import devices from "@/assets/images/elec.png";
 import headset from "@/assets/images/headset.png";
 import bob from "@/assets/images/bob.png";
 import propic from "@/assets/images/propic.jpg";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
 const { width } = Dimensions.get('window');
@@ -177,7 +176,7 @@ const Market = () => {
                     </View>
                     <View className='px-3'>
                         <Text className="text-[14px] text-[#000] font-poppins-medium mt-2">{selectedProduct?.text}</Text>
-                        <View className='flex-row justify-between items-center'>
+                        <View className='flex-row justify-between items-center pr-2'>
                             <Text className="text-[12px] text-[#000] font-poppins-medium mt-1">{selectedProduct?.price}</Text>
                             <Ionicons name="heart-outline" size={15} color="#000000" />
                         </View>
@@ -201,8 +200,8 @@ const Market = () => {
                             </View>
                             <Ionicons name="shield-checkmark" size={15} color="#0452df" />
                         </View>
-                        <View className='flex-row gap-2 mt-5'>
-                            <Ionicons name="shield-checkmark" size={15} color="#0452df" />
+                        <View className='flex-row items-center gap-1 mt-5'>
+                            <EvilIcons name="location" size={20} color="#0452df" />
                             <Text className='text-[12px]'>2.4km away from you</Text>
                         </View>
                         <View className='flex-row gap-2 mt-2'>
