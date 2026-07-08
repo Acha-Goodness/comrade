@@ -3,7 +3,6 @@ import { Tabs } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, View, Text } from 'react-native';
 
-
 const DashLayout = () => {
     return (
         <>

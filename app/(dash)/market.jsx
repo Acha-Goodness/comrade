@@ -14,11 +14,12 @@ import ebike from "@/assets/images/ebike.png";
 import devices from "@/assets/images/elec.png";
 import headset from "@/assets/images/headset.png";
 import bob from "@/assets/images/bob.png";
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
 
 const { width } = Dimensions.get('window');
 
 const Market = () => {
-
+    const [isPresented, setIsPresented] = useState(false);
     const params = useLocalSearchParams();
 
     const product = [
@@ -143,6 +144,9 @@ const Market = () => {
                         />
                     </View>
                 </View>
+                <BottomSheetView>
+                    <Text>SHEEEEEEET</Text>
+                </BottomSheetView>
             </View>
         </SafeAreaView>
     )
