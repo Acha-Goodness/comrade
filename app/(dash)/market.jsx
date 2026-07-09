@@ -112,7 +112,6 @@ const Market = () => {
                     <View className="mt-[5%] mb-[3%]">
                         <View className="flex-row justify-between items-center">
                             <Text className="text-[18px] font-[600] text-[#000]">Popular Near You</Text>
-                            <Text className="text-[12px] font-[500] font-inter text-[#0452df] font-semibold">View All</Text>
                         </View>
                     </View>
 
@@ -129,7 +128,7 @@ const Market = () => {
                             renderItem={({ item }) => (
                                 <TouchableOpacity onPress={() => handleOpenPress(item)} className={`w-[45%] rounded-[5px]`}>
                                     <View className='bg-[#e0e0e0ff] w-full h-[13vh] rounded-t-md items-center justify-center'>
-                                        <View className='px-[2.5%] py-[2.5%] mt-1 rounded-[5px] bg-[#0452df] absolute top-1 left-2.5 z-10'>
+                                        <View className='px-[2.5%] py-[2.5%] mt-1 rounded-[5px] bg-[#000000] absolute top-1 left-2.5 z-10'>
                                             <Ionicons name="shield-checkmark" size={15} color="#ffffffff" />
                                         </View>
                                         <View className='w-[50%] h-[15vh]'>
@@ -174,7 +173,7 @@ const Market = () => {
                 <BottomSheet ref={bottomSheetRef} index={0} snapPoints={snapPoints}>
                     <BottomSheetView className='p-2'>
                         <View className='bg-[#e0e0e0ff] w-full h-[20vh] rounded-t-md items-center justify-center'>
-                            <View className='px-[2.5%] py-[2.5%] mt-1 rounded-[5px] bg-[#0452df] absolute top-1 left-2.5 z-10'>
+                            <View className='p-[1.5%] mt-1 rounded-[5px] bg-[#000000] absolute top-1 left-2.5 z-10'>
                                 <Ionicons name="shield-checkmark" size={15} color="#ffffffff" />
                             </View>
                             <View className='w-[80%] h-[20vh]'>
@@ -209,17 +208,17 @@ const Market = () => {
                                         <Text className='text-[10px]'>⭐️ 4.8</Text>
                                     </View>
                                 </View>
-                                <Ionicons name="shield-checkmark" size={15} color="#0452df" />
+                                <Ionicons name="shield-checkmark" size={15} color="#000000" />
                             </View>
                             <View className='flex-row items-center gap-1 mt-5'>
                                 <EvilIcons name="location" size={20} color="#0452df" />
                                 <Text className='text-[12px]'>2.4km away from you</Text>
                             </View>
                             <View className='flex-row gap-2 mt-2'>
-                                <TouchableOpacity className="bg-white py-[8px] rounded-[5px] mt-2 w-[30%] border border-1 border-[#0452df]">
-                                    <Text className="text-[12px] font-[500] text-center font-inter text-[#0452df]">Chat</Text>
+                                <TouchableOpacity className="bg-white py-[8px] rounded-[5px] mt-2 w-[30%] border border-1 border-[#000000]">
+                                    <Text className="text-[12px] font-[500] text-center font-inter text-[#000000]">Chat</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity className="bg-[#0452df] py-[8px] rounded-[5px] mt-2 w-[30%]">
+                                <TouchableOpacity className="bg-[#000000] py-[8px] rounded-[5px] mt-2 w-[30%]">
                                     <Text className="text-[12px] font-[500] text-center font-inter text-[#ffffff]">Make Offer</Text>
                                 </TouchableOpacity>
                             </View>

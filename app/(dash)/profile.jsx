@@ -19,13 +19,13 @@ const Profile = () => {
 
     return (
         <>
-            <View style={{ height: "8%", backgroundColor: "#0452df" }}>
+            <View style={{ height: "8%", backgroundColor: "#000000" }}>
                 <StatusBar barStyle="light-content" />
             </View>
             <View className="flex-1 bg-white">
                 <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
                     {/* Profile Info */}
-                    <View className='flex-row justify-between items-start px-5 pb-10 bg-[#0452df]'>
+                    <View className='flex-row justify-between items-start px-5 pb-10 bg-[#000000]'>
                         <View className='flex-row items-center h-[10vh]'>
                             <View className='w-[90px] h-[90px] flex justify-center'>
                                 <Image
@@ -40,8 +40,8 @@ const Profile = () => {
                                 <Text className='text-[10px] text-white'>amanda_brook@university.edu</Text>
                             </View>
                         </View>
-                        <View className='bg-[#97bcffff] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
-                            <FontAwesome5 name="pen" size={15} color="#ffffffff" />
+                        <View className='bg-[##eeeeee] w-[30px] h-[30px] rounded-full flex items-center justify-center'>
+                            <FontAwesome5 name="pen" size={15} color="#000000ff" />
                         </View>
                     </View>
 
@@ -72,16 +72,16 @@ const Profile = () => {
                         <View className="gap-6">
                             <TouchableOpacity className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3">
                                 <View className="flex-row items-center gap-4">
-                                    <Ionicons name="notifications" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">My Listings</Text>
+                                    <Ionicons name="notifications" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">My Listings</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
 
                             <TouchableOpacity className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3">
                                 <View className="flex-row items-center gap-4">
-                                    <MaterialCommunityIcons name="palette" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">My Orders</Text>
+                                    <MaterialCommunityIcons name="palette" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">My Orders</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
@@ -91,16 +91,16 @@ const Profile = () => {
                                 className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3"
                             >
                                 <View className="flex-row items-center gap-4">
-                                    <Ionicons name="person" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">Saved Items</Text>
+                                    <Ionicons name="person" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">Saved Items</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
 
                             <TouchableOpacity className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3">
                                 <View className="flex-row items-center gap-4">
-                                    <MaterialCommunityIcons name="face-man-shimmer" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">Recently Viewed</Text>
+                                    <MaterialCommunityIcons name="face-man-shimmer" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">Recently Viewed</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
@@ -111,16 +111,16 @@ const Profile = () => {
                         <View className="gap-6">
                             <TouchableOpacity className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3">
                                 <View className="flex-row items-center gap-4">
-                                    <Ionicons name="paper-plane" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">Settings</Text>
+                                    <Ionicons name="paper-plane" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">Settings</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
 
                             <TouchableOpacity className="flex-row items-center justify-between border-b border-[#F4F4FB] pb-4 mt-3">
                                 <View className="flex-row items-center gap-4">
-                                    <MaterialIcons name="support-agent" size={22} color="#0452df" />
-                                    <Text className="text-[15px] font-[500] text-[#0452df] font-poppins">Help & Support</Text>
+                                    <MaterialIcons name="support-agent" size={22} color="#000000" />
+                                    <Text className="text-[15px] font-[500] text-[#000000] font-poppins">Help & Support</Text>
                                 </View>
                                 <Feather name="chevron-right" size={20} color="#666" />
                             </TouchableOpacity>
