@@ -1,10 +1,13 @@
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, FlatList, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, FontAwesome, Entypo, MaterialIcons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useIsFocused } from '@react-navigation/native';
 
 const Message = () => {
     const router = useRouter();
+    const isFocused = useIsFocused();
 
     const transaction = [
         {
@@ -72,115 +75,125 @@ const Message = () => {
         }
     ]
 
+    useEffect(() => {
+        if (isFocused) {
+            StatusBar.setBarStyle('dark-content');
+            StatusBar.setBackgroundColor('#121212'); // Android only
+        }
+    }, [isFocused]);
+
     return (
-        <SafeAreaView className="flex-1 bg-white">
-            <View className="flex-1 px-[5%] pt-2">
-                {/* Header */}
-                <View className="flex-row items-center justify-between mb-6">
-                    <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 bg-[#F9F9F9] rounded-full items-center justify-center">
-                        <Entypo name="chevron-left" size={24} color="black" />
-                    </TouchableOpacity>
-                    <Text className="text-[24px] font-[600] text-[#000]">Wallet</Text>
-                    <TouchableOpacity>
-                        <Entypo name="dots-three-horizontal" size={24} color="black" />
-                    </TouchableOpacity>
+        <>
+            <StatusBar barStyle="dark-content" />
+            <SafeAreaView className="flex-1 bg-white">
+                <View className="flex-1 px-[5%] pt-2">
+                    {/* Header */}
+                    <View className="flex-row items-center justify-between mb-6">
+                        <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 bg-[#F9F9F9] rounded-full items-center justify-center">
+                            <Entypo name="chevron-left" size={24} color="black" />
+                        </TouchableOpacity>
+                        <Text className="text-[24px] font-[600] text-[#000]">Wallet</Text>
+                        <TouchableOpacity>
+                            <Entypo name="dots-three-horizontal" size={24} color="black" />
+                        </TouchableOpacity>
+                    </View>
+
+                    <FlatList
+                        showsVerticalScrollIndicator={false}
+                        data={transaction}
+                        contentContainerStyle={{ gap: 16, paddingBottom: 100 }}
+                        keyExtractor={item => item.id.toString()}
+                        ListHeaderComponent={
+                            <View>
+                                {/* Balance Card */}
+                                <View className="mb-8">
+                                    <View className="flex-row items-center justify-between mb-4">
+                                        <View className="flex-row items-center gap-2 bg-[#F9F9F9] px-3 py-1.5 rounded-[20px]">
+                                            <Ionicons name="wallet" size={16} color="#666" />
+                                            <Text className="text-[12px] text-[#000] font-[500]">Wallet Balance</Text>
+                                        </View>
+                                        <View className="flex-row gap-4 bg-[#F9F9F9] px-3 py-2 rounded-[20px]">
+                                            <Entypo name="eye" size={16} color="#666" />
+                                            <MaterialIcons name="lock" size={16} color="#666" />
+                                            <Ionicons name="copy" size={16} color="#666" />
+                                        </View>
+                                    </View>
+
+                                    <View className="flex-row items-start gap-2">
+                                        <View className="flex-row items-start">
+                                            <MaterialCommunityIcons name="currency-ngn" size={32} color="black" style={{ marginTop: 8 }} />
+                                            <Text className="text-[44px] font-[600] text-[#000] leading-tight">120,432.05</Text>
+                                        </View>
+                                        <View className="bg-[#DCFCE7] px-3 py-1 rounded-[20px] mt-2">
+                                            <Text className="text-[12px] text-[#00C853] font-[600]">Active</Text>
+                                        </View>
+                                    </View>
+                                </View>
+
+                                {/* Action Buttons */}
+                                <View className="flex-row justify-between mb-10">
+                                    <View className="items-center gap-2">
+                                        <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
+                                            <Entypo name="plus" size={24} color="#292D32" />
+                                        </TouchableOpacity>
+                                        <Text className="text-[14px] font-[600] text-[#000] font-inter">Fund</Text>
+                                    </View>
+                                    <View className="items-center gap-2">
+                                        <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
+                                            <Entypo name="minus" size={24} color="#292D32" />
+                                        </TouchableOpacity>
+                                        <Text className="text-[14px] font-[600] text-[#000] font-inter">Withdraw</Text>
+                                    </View>
+                                    <View className="items-center gap-2">
+                                        <TouchableOpacity
+                                            className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center"
+                                            onPress={() => router.push("/statistics")}
+                                        >
+                                            <Ionicons name="bar-chart-outline" size={24} color="#292D32" />
+                                        </TouchableOpacity>
+                                        <Text className="text-[14px] font-[600] text-[#000] font-inter">Stats</Text>
+                                    </View>
+                                    <View className="items-center gap-2">
+                                        <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
+                                            <Ionicons name="settings-outline" size={24} color="#292D32" />
+                                        </TouchableOpacity>
+                                        <Text className="text-[14px] font-[600] text-[#000] font-inter">Setting</Text>
+                                    </View>
+                                </View>
+
+                                {/* Today Transaction */}
+                                <View className="flex-row justify-between items-center mb-6">
+                                    <View>
+                                        <Text className="text-[16px] font-[600] text-[#000]">Today Transaction</Text>
+                                        <Text className="text-[11px] text-[#666] font-inter">13 transaction today</Text>
+                                    </View>
+                                    <View className="bg-[#FFF] border-2 border-[#ECECEC] p-[3%] rounded-[50px]">
+                                        <Feather name="arrow-up-right" size={24} color="black" />
+                                    </View>
+                                </View>
+                            </View>
+                        }
+                        renderItem={({ item }) => (
+                            <View className="flex-row items-center w-[100%] justify-between border-2 border-[#ECECEC] bg-white px-4 py-[5%] rounded-[30px]">
+                                <View className="flex-row items-center gap-4">
+                                    <View className="w-12 h-12 rounded-full items-center justify-center" style={{ backgroundColor: item.color }}>
+                                        <FontAwesome name={item.icon} size={24} color="white" />
+                                    </View>
+                                    <View>
+                                        <Text className="text-[14px] font-[600] text-[#000]">{item.title}</Text>
+                                        <Text className={`text-[11px] font-[500] font-inter ${item.description === "Money In" ? "text-[#00C853]" : "text-[#FF0000]"}`}>{item.description}</Text>
+                                    </View>
+                                </View>
+                                <View className="items-end flex-row gap-2 w-[50%] justify-between">
+                                    <Text className="text-[11px] text-[#666] mb-1 font-inter">{item.time}</Text>
+                                    <Text className="text-[20px] font-[600] text-[#000] leading-tight">{item.amount}</Text>
+                                </View>
+                            </View>
+                        )}
+                    />
                 </View>
-
-                <FlatList
-                    showsVerticalScrollIndicator={false}
-                    data={transaction}
-                    contentContainerStyle={{ gap: 16, paddingBottom: 100 }}
-                    keyExtractor={item => item.id.toString()}
-                    ListHeaderComponent={
-                        <View>
-                            {/* Balance Card */}
-                            <View className="mb-8">
-                                <View className="flex-row items-center justify-between mb-4">
-                                    <View className="flex-row items-center gap-2 bg-[#F9F9F9] px-3 py-1.5 rounded-[20px]">
-                                        <Ionicons name="wallet" size={16} color="#666" />
-                                        <Text className="text-[12px] text-[#000] font-[500]">Wallet Balance</Text>
-                                    </View>
-                                    <View className="flex-row gap-4 bg-[#F9F9F9] px-3 py-2 rounded-[20px]">
-                                        <Entypo name="eye" size={16} color="#666" />
-                                        <MaterialIcons name="lock" size={16} color="#666" />
-                                        <Ionicons name="copy" size={16} color="#666" />
-                                    </View>
-                                </View>
-
-                                <View className="flex-row items-start gap-2">
-                                    <View className="flex-row items-start">
-                                        <MaterialCommunityIcons name="currency-ngn" size={32} color="black" style={{ marginTop: 8 }} />
-                                        <Text className="text-[44px] font-[600] text-[#000] leading-tight">120,432.05</Text>
-                                    </View>
-                                    <View className="bg-[#DCFCE7] px-3 py-1 rounded-[20px] mt-2">
-                                        <Text className="text-[12px] text-[#00C853] font-[600]">Active</Text>
-                                    </View>
-                                </View>
-                            </View>
-
-                            {/* Action Buttons */}
-                            <View className="flex-row justify-between mb-10">
-                                <View className="items-center gap-2">
-                                    <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
-                                        <Entypo name="plus" size={24} color="#292D32" />
-                                    </TouchableOpacity>
-                                    <Text className="text-[14px] font-[600] text-[#000] font-inter">Fund</Text>
-                                </View>
-                                <View className="items-center gap-2">
-                                    <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
-                                        <Entypo name="minus" size={24} color="#292D32" />
-                                    </TouchableOpacity>
-                                    <Text className="text-[14px] font-[600] text-[#000] font-inter">Withdraw</Text>
-                                </View>
-                                <View className="items-center gap-2">
-                                    <TouchableOpacity
-                                        className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center"
-                                        onPress={() => router.push("/statistics")}
-                                    >
-                                        <Ionicons name="bar-chart-outline" size={24} color="#292D32" />
-                                    </TouchableOpacity>
-                                    <Text className="text-[14px] font-[600] text-[#000] font-inter">Stats</Text>
-                                </View>
-                                <View className="items-center gap-2">
-                                    <TouchableOpacity className="w-16 h-16 rounded-full bg-white border-2 border-[#F9F9F9] items-center justify-center">
-                                        <Ionicons name="settings-outline" size={24} color="#292D32" />
-                                    </TouchableOpacity>
-                                    <Text className="text-[14px] font-[600] text-[#000] font-inter">Setting</Text>
-                                </View>
-                            </View>
-
-                            {/* Today Transaction */}
-                            <View className="flex-row justify-between items-center mb-6">
-                                <View>
-                                    <Text className="text-[16px] font-[600] text-[#000]">Today Transaction</Text>
-                                    <Text className="text-[11px] text-[#666] font-inter">13 transaction today</Text>
-                                </View>
-                                <View className="bg-[#FFF] border-2 border-[#ECECEC] p-[3%] rounded-[50px]">
-                                    <Feather name="arrow-up-right" size={24} color="black" />
-                                </View>
-                            </View>
-                        </View>
-                    }
-                    renderItem={({ item }) => (
-                        <View className="flex-row items-center w-[100%] justify-between border-2 border-[#ECECEC] bg-white px-4 py-[5%] rounded-[30px]">
-                            <View className="flex-row items-center gap-4">
-                                <View className="w-12 h-12 rounded-full items-center justify-center" style={{ backgroundColor: item.color }}>
-                                    <FontAwesome name={item.icon} size={24} color="white" />
-                                </View>
-                                <View>
-                                    <Text className="text-[14px] font-[600] text-[#000]">{item.title}</Text>
-                                    <Text className={`text-[11px] font-[500] font-inter ${item.description === "Money In" ? "text-[#00C853]" : "text-[#FF0000]"}`}>{item.description}</Text>
-                                </View>
-                            </View>
-                            <View className="items-end flex-row gap-2 w-[50%] justify-between">
-                                <Text className="text-[11px] text-[#666] mb-1 font-inter">{item.time}</Text>
-                                <Text className="text-[20px] font-[600] text-[#000] leading-tight">{item.amount}</Text>
-                            </View>
-                        </View>
-                    )}
-                />
-            </View>
-        </SafeAreaView>
+            </SafeAreaView>
+        </>
     )
 }
 

@@ -1,7 +1,6 @@
 import { MaterialCommunityIcons, Octicons, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { Platform, View, Text } from 'react-native';
+import { Platform, View, Text, StatusBar } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const DashLayout = () => {
@@ -17,7 +16,7 @@ const DashLayout = () => {
                     <StatusBar style="dark" />
                 </View>
             )} */}
-                <StatusBar style="dark" />
+                <StatusBar barStyle="dark-content" />
                 <Tabs
                     screenOptions={{
                         headerShown: false,

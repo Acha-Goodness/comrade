@@ -1,22 +1,26 @@
-import { View, Text, ScrollView, TouchableOpacity, Image, FlatList } from 'react-native';
-import React, { useState } from 'react';
+import { View, Text, ScrollView, TouchableOpacity, Image, FlatList, StatusBar } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import AccountSettings from '../../components/AccountSettings';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, MaterialIcons, MaterialCommunityIcons, Feather, FontAwesome5 } from '@expo/vector-icons';
 import propic from "@/assets/images/propic.jpg";
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
+import { useIsFocused } from '@react-navigation/native';
 
 const Profile = () => {
-    const [showAccountSettings, setShowAccountSettings] = useState(false);
+    const isFocused = useIsFocused();
 
-    if (showAccountSettings) {
-        return <AccountSettings onBack={() => setShowAccountSettings(false)} />;
-    }
+    useEffect(() => {
+        if (isFocused) {
+            StatusBar.setBarStyle('light-content');
+            StatusBar.setBackgroundColor('#121212'); // Android only
+        }
+    }, [isFocused]);
 
     return (
         <>
             <View style={{ height: "8%", backgroundColor: "#0452df" }}>
-                <StatusBar style="light" />
+                <StatusBar barStyle="light-content" />
             </View>
             <View className="flex-1 bg-white">
                 <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
